@@ -245,31 +245,17 @@ body.light .flag-btn{
     transform:translateY(-2px);
 }
 
-/* ⭐ separadores */
 .star{
     font-size:10px;
-    color:#c084fc;
+    color:#ffffff; /* blanco fijo */
 
-    opacity:0.7;
-
-    animation:twinkle 2s infinite ease-in-out;
+    opacity:0.9;
 
     display:flex;
     align-items:center;
 }
 
-@keyframes twinkle{
-    0%,100%{
-        opacity:0.3;
-        transform:scale(1);
-        text-shadow:0 0 5px #a855f7;
-    }
-    50%{
-        opacity:1;
-        transform:scale(1.3);
-        text-shadow:0 0 12px #c084fc;
-    }
-}
+
 
 /* =========================
    📄 CONTENT
