@@ -1,11 +1,10 @@
-
 window.onload = () => {
 
-    const dot = document.querySelector(".light-dot");
-    const text = document.querySelector(".text");
+    const star = document.querySelector(".shooting-star");
 
+    // reinicio animación para asegurar timing
     setTimeout(() => {
-        text.style.filter = "drop-shadow(0 0 10px white)";
-    }, 2500);
+        star.style.animation = "shoot 3s linear forwards";
+    }, 500);
 
 };
