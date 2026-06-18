@@ -226,11 +226,9 @@ body.light .flag-btn{
     justify-content:flex-end;
 
     gap:10px;
-
     flex-wrap:wrap;
 }
 
-/* links */
 .menu a{
     text-decoration:none;
     color:inherit;
@@ -239,7 +237,6 @@ body.light .flag-btn{
     opacity:0.75;
 
     transition:0.3s;
-
     white-space:nowrap;
 }
 
@@ -261,7 +258,6 @@ body.light .flag-btn{
     align-items:center;
 }
 
-/* animación */
 @keyframes twinkle{
     0%,100%{
         opacity:0.3;
@@ -284,6 +280,10 @@ body.light .flag-btn{
     padding-left:25px;
 }
 
+/* =========================
+   🚀 HERO ORBITAL (MEJORADO)
+========================= */
+
 .hero{
     height:100vh;
     display:flex;
@@ -291,11 +291,9 @@ body.light .flag-btn{
     align-items:center;
     position:relative;
     overflow:hidden;
-}
 
-/* =========================
-   🌌 ÓRBITAS
-========================= */
+    background:radial-gradient(circle at center, #12001f 0%, #050505 70%);
+}
 
 .orbit-layer{
     position:absolute;
@@ -303,34 +301,65 @@ body.light .flag-btn{
     height:100%;
     top:0;
     left:0;
+    overflow:hidden;
 }
 
-/* órbitas base */
+/* órbitas */
 .orbit{
     position:absolute;
     top:50%;
     left:50%;
-    border:1px solid rgba(168,85,247,0.25);
     border-radius:50%;
-    transform:translate(-50%, -50%);
+    border:1px solid rgba(168,85,247,0.25);
 }
 
 /* tamaños */
-.orbit1{ width:200px; height:200px; animation:spin 8s linear infinite; }
-.orbit2{ width:350px; height:350px; animation:spin 12s linear infinite reverse; }
-.orbit3{ width:500px; height:500px; animation:spin 18s linear infinite; }
+.orbit1{
+    width:220px;
+    height:220px;
+    animation:spin 10s linear infinite;
+}
 
-/* planetas */
+.orbit2{
+    width:380px;
+    height:380px;
+    animation:spin 16s linear infinite reverse;
+}
+
+.orbit3{
+    width:520px;
+    height:520px;
+    animation:spin 22s linear infinite;
+}
+
+/* planetas (MEJORADOS) */
 .planet{
-    width:10px;
-    height:10px;
-    background:#c084fc;
+    width:16px;
+    height:16px;
     border-radius:50%;
+
     position:absolute;
     top:0;
     left:50%;
     transform:translateX(-50%);
-    box-shadow:0 0 10px #a855f7;
+
+    box-shadow:0 0 18px currentColor;
+}
+
+/* colores por órbita */
+.orbit1 .planet{
+    background:#a855f7;
+    color:#a855f7;
+}
+
+.orbit2 .planet{
+    background:#22d3ee;
+    color:#22d3ee;
+}
+
+.orbit3 .planet{
+    background:#f472b6;
+    color:#f472b6;
 }
 
 /* rotación */
@@ -352,7 +381,7 @@ body.light .flag-btn{
     text-shadow:0 0 15px #a855f7;
 }
 
-/* cursor parpadeante */
+/* cursor */
 .cursor{
     animation:blink 0.8s infinite;
 }
