@@ -4,24 +4,31 @@
     box-sizing:border-box;
 }
 
+/* =========================
+   🌍 BASE
+========================= */
+
 body{
     font-family: Arial, sans-serif;
-    transition: 0.5s;
+    transition:0.5s;
 }
 
-/* 🌙 DARK (default) */
+/* 🌙 modo oscuro (default) */
 body.dark{
     background:#0b0b0b;
     color:white;
 }
 
-/* ☀️ LIGHT */
+/* ☀️ modo claro */
 body.light{
     background:#eaf6ff;
     color:#111;
 }
 
-/* HEADER */
+/* =========================
+   🧭 HEADER
+========================= */
+
 .header{
     position:fixed;
     top:0;
@@ -30,34 +37,44 @@ body.light{
 
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-start;
 
     padding:15px 25px;
 
     background:rgba(0,0,0,0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
 
     z-index:1000;
 }
 
+/* header en modo claro */
 body.light .header{
     background:rgba(255,255,255,0.6);
 }
 
-/* LOGO */
+/* logo */
 .logo{
     font-weight:bold;
 }
 
-/* BOTONES */
+/* columna derecha (todo el bloque UI) */
 .right{
     display:flex;
+    flex-direction:column;
+    align-items:flex-end;
     gap:10px;
 }
 
-/* ========================= */
-/* 🌙☀️ SWITCH               */
-/* ========================= */
+/* fila superior: switch + banderas */
+.top-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* =========================
+   🌙☀️ SWITCH TEMA
+========================= */
 
 .switch{
     border:none;
@@ -73,16 +90,16 @@ body.light .header{
     position:relative;
     overflow:hidden;
 
-    background: linear-gradient(to right, #87ceeb, #cfefff);
+    background:linear-gradient(to right,#87ceeb,#cfefff);
     transition:0.5s;
 }
 
-/* DARK MODE TRACK */
+/* modo oscuro */
 body.dark .track{
-    background: linear-gradient(to right, #0b1026, #1a1b3a);
+    background:linear-gradient(to right,#0b1026,#1a1b3a);
 }
 
-/* ☁️ NUBES */
+/* ☁️ nubes */
 .clouds::before,
 .clouds::after{
     content:"";
@@ -96,12 +113,17 @@ body.dark .track{
     box-shadow:10px 5px 0 white, 20px 10px 0 white;
 }
 
-/* 🌌 ESTRELLAS */
+/* 🌌 estrellas */
 .stars{
     position:absolute;
     width:100%;
     height:100%;
     opacity:0;
+}
+
+/* estrellas visibles en oscuro */
+body.dark .stars{
+    opacity:1;
 }
 
 .stars::before{
@@ -114,17 +136,12 @@ body.dark .track{
     letter-spacing:8px;
 }
 
-/* activar en oscuro */
-body.dark .stars{
-    opacity:1;
-}
-
 /* ocultar nubes en oscuro */
 body.dark .clouds{
     opacity:0;
 }
 
-/* KNOB */
+/* botón móvil del switch */
 .knob{
     width:38px;
     height:38px;
@@ -143,22 +160,20 @@ body.dark .clouds{
     transition:0.4s;
 }
 
-/* mover a modo oscuro */
+/* posición en modo oscuro */
 body.dark .knob{
     left:69px;
     background:#1e1e2f;
 }
 
-/* icono */
 .icon{
     font-size:16px;
 }
 
-/* CONTENT */
-.content{
-    padding-top:90px;
-    padding-left:25px;
-}
+/* =========================
+   🌍 IDIOMA (banderas)
+========================= */
+
 .lang-switch{
     display:flex;
     gap:8px;
@@ -174,7 +189,7 @@ body.dark .knob{
     cursor:pointer;
 
     background:rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter:blur(10px);
 
     display:flex;
     justify-content:center;
@@ -186,7 +201,6 @@ body.dark .knob{
 .flag-btn svg{
     width:24px;
     height:24px;
-
     border-radius:4px;
 }
 
@@ -206,6 +220,9 @@ body.light .flag-btn{
     background:rgba(0,0,0,0.08);
 }
 
+/* =========================
+   📜 MENÚ
+========================= */
 
 .menu{
     display:flex;
@@ -213,7 +230,6 @@ body.light .flag-btn{
     align-items:flex-end;
 
     gap:6px;
-    margin-top:10px;
 }
 
 /* links */
@@ -227,22 +243,23 @@ body.light .flag-btn{
     transition:0.3s;
 }
 
+/* hover links */
 .menu a:hover{
     opacity:1;
     transform:translateX(-4px);
 }
 
-/* ⭐ estrellas separadoras */
+/* ⭐ separadores animados */
 .star{
     font-size:10px;
     color:#c084fc;
 
     opacity:0.7;
 
-    animation: twinkle 2s infinite ease-in-out;
+    animation:twinkle 2s infinite ease-in-out;
 }
 
-/* brillo animado */
+/* animación brillo */
 @keyframes twinkle{
     0%,100%{
         opacity:0.3;
@@ -254,4 +271,13 @@ body.light .flag-btn{
         transform:scale(1.3);
         text-shadow:0 0 12px #c084fc;
     }
+}
+
+/* =========================
+   📄 CONTENIDO
+========================= */
+
+.content{
+    padding-top:90px;
+    padding-left:25px;
 }
