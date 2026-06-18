@@ -39,3 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
     setLanguage("es");
 
 });
+
+const text = "JUANA AMARO";
+const typed = document.getElementById("typed");
+
+let i = 0;
+
+function typeEffect(){
+
+    if(i < text.length){
+        typed.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 120);
+    }
+}
+
+typeEffect();
