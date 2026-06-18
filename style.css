@@ -9,17 +9,17 @@
 ========================= */
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial, sans-serif;
     transition:0.5s;
 }
 
-/* 🌙 modo oscuro (default) */
+/* 🌙 DARK MODE */
 body.dark{
     background:#0b0b0b;
     color:white;
 }
 
-/* ☀️ modo claro */
+/* ☀️ LIGHT MODE */
 body.light{
     background:#eaf6ff;
     color:#111;
@@ -47,7 +47,6 @@ body.light{
     z-index:1000;
 }
 
-/* header en modo claro */
 body.light .header{
     background:rgba(255,255,255,0.6);
 }
@@ -57,19 +56,22 @@ body.light .header{
     font-weight:bold;
 }
 
-/* columna derecha (todo el bloque UI) */
+/* columna derecha */
 .right{
     display:flex;
     flex-direction:column;
     align-items:flex-end;
-    gap:10px;
+    gap:12px;
+    width:100%;
 }
 
-/* fila superior: switch + banderas */
+/* fila superior */
 .top-controls{
     display:flex;
     align-items:center;
+    justify-content:flex-end;
     gap:12px;
+    width:100%;
 }
 
 /* =========================
@@ -94,7 +96,6 @@ body.light .header{
     transition:0.5s;
 }
 
-/* modo oscuro */
 body.dark .track{
     background:linear-gradient(to right,#0b1026,#1a1b3a);
 }
@@ -121,7 +122,6 @@ body.dark .track{
     opacity:0;
 }
 
-/* estrellas visibles en oscuro */
 body.dark .stars{
     opacity:1;
 }
@@ -136,12 +136,12 @@ body.dark .stars{
     letter-spacing:8px;
 }
 
-/* ocultar nubes en oscuro */
+/* ocultar nubes en dark */
 body.dark .clouds{
     opacity:0;
 }
 
-/* botón móvil del switch */
+/* knob */
 .knob{
     width:38px;
     height:38px;
@@ -160,7 +160,6 @@ body.dark .clouds{
     transition:0.4s;
 }
 
-/* posición en modo oscuro */
 body.dark .knob{
     left:69px;
     background:#1e1e2f;
@@ -171,7 +170,7 @@ body.dark .knob{
 }
 
 /* =========================
-   🌍 IDIOMA (banderas)
+   🌍 IDIOMA
 ========================= */
 
 .lang-switch{
@@ -204,18 +203,15 @@ body.dark .knob{
     border-radius:4px;
 }
 
-/* hover */
 .flag-btn:hover{
     transform:scale(1.1);
 }
 
-/* activo */
 .flag-btn.active{
     outline:2px solid #a855f7;
     transform:scale(1.1);
 }
 
-/* modo claro */
 body.light .flag-btn{
     background:rgba(0,0,0,0.08);
 }
@@ -228,7 +224,6 @@ body.light .flag-btn{
     display:flex;
     flex-direction:column;
     align-items:flex-end;
-
     gap:6px;
 }
 
@@ -243,13 +238,12 @@ body.light .flag-btn{
     transition:0.3s;
 }
 
-/* hover links */
 .menu a:hover{
     opacity:1;
     transform:translateX(-4px);
 }
 
-/* ⭐ separadores animados */
+/* ⭐ separadores */
 .star{
     font-size:10px;
     color:#c084fc;
@@ -259,7 +253,7 @@ body.light .flag-btn{
     animation:twinkle 2s infinite ease-in-out;
 }
 
-/* animación brillo */
+/* animación */
 @keyframes twinkle{
     0%,100%{
         opacity:0.3;
@@ -274,7 +268,7 @@ body.light .flag-btn{
 }
 
 /* =========================
-   📄 CONTENIDO
+   📄 CONTENT
 ========================= */
 
 .content{
