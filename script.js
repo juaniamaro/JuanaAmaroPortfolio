@@ -92,3 +92,50 @@ document.addEventListener("mousemove", (e) => {
 
     liquid.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
 });
+.liquid-circle{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    position:relative;
+    overflow:hidden;
+
+    background: radial-gradient(circle at 30% 30%, #a855f7, #22d3ee);
+
+    filter: blur(0.2px);
+    box-shadow: 0 0 25px rgba(168,85,247,0.5);
+
+    transition: transform 0.2s ease;
+}
+
+/* “líquido interno” */
+.liquid-circle::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    top:50%;
+    left:50%;
+
+    background: radial-gradient(circle at 30% 30%, #c084fc, #0ea5e9);
+    border-radius:40% 60% 60% 40% / 40% 40% 60% 60%;
+
+    transform:translate(-50%, -50%);
+    animation:blob 6s infinite linear;
+    opacity:0.9;
+}
+
+/* animación base del líquido */
+@keyframes blob{
+    0%{
+        border-radius:40% 60% 60% 40% / 40% 40% 60% 60%;
+        transform:translate(-50%, -50%) rotate(0deg);
+    }
+    50%{
+        border-radius:60% 40% 40% 60% / 60% 60% 40% 40%;
+        transform:translate(-50%, -50%) rotate(180deg);
+    }
+    100%{
+        border-radius:40% 60% 60% 40% / 40% 40% 60% 60%;
+        transform:translate(-50%, -50%) rotate(360deg);
+    }
+}
