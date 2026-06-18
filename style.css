@@ -5,66 +5,44 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Georgia", serif;
 }
 
-/* contenedor */
-.scene {
-    position: relative;
+/* SVG contenedor */
+.svg-text {
+    width: 900px;
+    height: 200px;
 }
 
-/* punto inicial */
-.light-dot {
-    width: 8px;
-    height: 8px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 20px;
-    box-shadow:
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px #fff;
-    animation: moveDot 2.5s ease forwards;
+/* camino invisible base */
+#path {
+    fill: none;
+    stroke: transparent;
 }
 
-/* texto final */
-.text {
-    font-size: 3rem;
-    color: transparent;
-    letter-spacing: 2px;
-    position: relative;
+/* TEXTO REAL (no visible) */
+text {
+    font-size: 60px;
+    fill: none;
+    stroke: white;
 
-    /* efecto de “revelado por luz” */
-    background: linear-gradient(90deg, white 0%, white 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
+    stroke-width: 2;
+    stroke-linecap: round;
 
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    animation: revealText 2.5s ease forwards;
-    animation-delay: 0.3s;
+    filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 15px white)
+        drop-shadow(0 0 30px #ffffff);
 }
 
-/* movimiento del punto */
-@keyframes moveDot {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(220px, 0);
-    }
+/* animación del “tubo de luz” */
+text {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 3s ease forwards;
 }
 
-/* revelado del texto */
-@keyframes revealText {
-    0% {
-        background-position: 100% 0;
-    }
-    100% {
-        background-position: 0 0;
-        color: white;
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
     }
 }
