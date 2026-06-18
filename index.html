@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,79 +17,64 @@
 
     <div class="right">
 
-        <!-- 🌙 SWITCH TEMA -->
-        <button id="themeSwitch" class="switch">
+        <div class="top-controls">
 
-            <div class="track">
-
-                <div class="clouds"></div>
-                <div class="stars"></div>
-
-                <div class="knob">
-                    <span class="icon">🌙</span>
+            <button id="themeSwitch" class="switch">
+                <div class="track">
+                    <div class="clouds"></div>
+                    <div class="stars"></div>
+                    <div class="knob">
+                        <span class="icon">🌙</span>
+                    </div>
                 </div>
+            </button>
+
+            <div class="lang-switch">
+
+                <button id="esBtn" class="flag-btn">
+                    <svg viewBox="0 0 640 480" width="24">
+                        <rect width="640" height="480" fill="#AA151B"/>
+                        <rect y="120" width="640" height="240" fill="#F1BF00"/>
+                    </svg>
+                </button>
+
+                <button id="enBtn" class="flag-btn">
+                    <svg viewBox="0 0 60 30" width="24">
+                        <rect width="60" height="30" fill="#012169"/>
+                        <polygon points="0,0 6,0 60,24 60,30 54,30 0,6" fill="#FFFFFF"/>
+                        <polygon points="60,0 54,0 0,24 0,30 6,30 60,6" fill="#FFFFFF"/>
+                        <polygon points="0,0 3,0 60,27 60,30 57,30 0,3" fill="#C8102E"/>
+                        <polygon points="60,0 57,0 0,27 0,30 3,30 60,3" fill="#C8102E"/>
+                        <rect x="25" width="10" height="30" fill="#FFFFFF"/>
+                        <rect y="10" width="60" height="10" fill="#FFFFFF"/>
+                        <rect x="27" width="6" height="30" fill="#C8102E"/>
+                        <rect y="12" width="60" height="6" fill="#C8102E"/>
+                    </svg>
+                </button>
 
             </div>
 
-        </button>
+        </div>
 
-        <!-- 🌍 IDIOMA -->
-   <div class="lang-switch">
+        <nav class="menu">
 
-    <!-- 🇪🇸 ESPAÑA -->
-    <button id="esBtn" class="flag-btn">
-        <svg viewBox="0 0 640 480" width="24">
-            <rect width="640" height="480" fill="#AA151B"/>
-            <rect y="120" width="640" height="240" fill="#F1BF00"/>
-        </svg>
-    </button>
+            <a href="#home">Home</a>
+            <span class="star">✦</span>
 
-    <!-- 🇬🇧 REINO UNIDO -->
-    <button id="enBtn" class="flag-btn">
-                <svg viewBox="0 0 60 30" width="24">
-        
-            <!-- fondo azul -->
-            <rect width="60" height="30" fill="#012169"/>
-        
-            <!-- diagonales blancas -->
-            <polygon points="0,0 6,0 60,24 60,30 54,30 0,6" fill="#FFFFFF"/>
-            <polygon points="60,0 54,0 0,24 0,30 6,30 60,6" fill="#FFFFFF"/>
-        
-            <!-- diagonales rojas -->
-            <polygon points="0,0 3,0 60,27 60,30 57,30 0,3" fill="#C8102E"/>
-            <polygon points="60,0 57,0 0,27 0,30 3,30 60,3" fill="#C8102E"/>
-        
-            <!-- cruz blanca central -->
-            <rect x="25" width="10" height="30" fill="#FFFFFF"/>
-            <rect y="10" width="60" height="10" fill="#FFFFFF"/>
-        
-            <!-- cruz roja central -->
-            <rect x="27" width="6" height="30" fill="#C8102E"/>
-            <rect y="12" width="60" height="6" fill="#C8102E"/>
-        
-        </svg>
-    </button>
+            <a href="#about">Sobre mí</a>
+            <span class="star">✦</span>
 
-</div>
-        
+            <a href="#projects">Proyectos</a>
+            <span class="star">✦</span>
+
+            <a href="#blog">Divulgación</a>
+            <span class="star">✦</span>
+
+            <a href="#contact">Contacto</a>
+
+        </nav>
+
     </div>
-    <nav class="menu">
-
-    <a href="#home">Home</a>
-    <span class="star">✦</span>
-
-    <a href="#about">Sobre mí</a>
-    <span class="star">✦</span>
-
-    <a href="#projects">Proyectos</a>
-    <span class="star">✦</span>
-
-    <a href="#blog">Divulgación</a>
-    <span class="star">✦</span>
-
-    <a href="#contact">Contacto</a>
-
-    </nav>
 
 </header>
 
@@ -98,8 +82,6 @@
 
     <h1 id="title">Hola, soy Juana</h1>
     <p id="text">Bienvenida a mi portfolio</p>
-
-    <div style="height:2000px;"></div>
 
 </main>
 
