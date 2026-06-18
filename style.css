@@ -136,7 +136,6 @@ body.dark .stars{
     letter-spacing:8px;
 }
 
-/* ocultar nubes en dark */
 body.dark .clouds{
     opacity:0;
 }
@@ -217,14 +216,18 @@ body.light .flag-btn{
 }
 
 /* =========================
-   📜 MENÚ
+   📜 MENÚ (ARREGLADO)
 ========================= */
 
 .menu{
     display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:6px;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:10px;
+
+    flex-wrap:wrap;
 }
 
 /* links */
@@ -236,11 +239,13 @@ body.light .flag-btn{
     opacity:0.75;
 
     transition:0.3s;
+
+    white-space:nowrap;
 }
 
 .menu a:hover{
     opacity:1;
-    transform:translateX(-4px);
+    transform:translateY(-2px);
 }
 
 /* ⭐ separadores */
@@ -251,6 +256,9 @@ body.light .flag-btn{
     opacity:0.7;
 
     animation:twinkle 2s infinite ease-in-out;
+
+    display:flex;
+    align-items:center;
 }
 
 /* animación */
