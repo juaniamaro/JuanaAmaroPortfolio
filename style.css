@@ -1,116 +1,161 @@
-body {
-    margin: 0;
-    height: 100vh;
-    background: #0b0b0b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
     transition: 0.5s;
 }
 
-/* 🌙 modo claro */
-body.light {
-    background: #eaf6ff;
+/* 🌙 DARK (default) */
+body.dark{
+    background:#0b0b0b;
+    color:white;
 }
 
-/* SWITCH */
-.switch {
-    border: none;
-    background: transparent;
-    cursor: pointer;
+/* ☀️ LIGHT */
+body.light{
+    background:#eaf6ff;
+    color:#111;
 }
 
-/* pista */
-.track {
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
+/* HEADER */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
 
-    position: relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    overflow: hidden;
+    padding:15px 25px;
+
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+
+    z-index:1000;
+}
+
+body.light .header{
+    background:rgba(255,255,255,0.6);
+}
+
+/* LOGO */
+.logo{
+    font-weight:bold;
+}
+
+/* BOTONES */
+.right{
+    display:flex;
+    gap:10px;
+}
+
+/* ========================= */
+/* 🌙☀️ SWITCH               */
+/* ========================= */
+
+.switch{
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+.track{
+    width:110px;
+    height:45px;
+    border-radius:50px;
+
+    position:relative;
+    overflow:hidden;
 
     background: linear-gradient(to right, #87ceeb, #cfefff);
-
-    transition: 0.5s;
+    transition:0.5s;
 }
 
-/* modo oscuro fondo */
-body.dark .track {
+/* DARK MODE TRACK */
+body.dark .track{
     background: linear-gradient(to right, #0b1026, #1a1b3a);
 }
 
 /* ☁️ NUBES */
 .clouds::before,
-.clouds::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 15px;
-    left: 10px;
-    box-shadow: 10px 5px 0 white, 20px 10px 0 white;
-    opacity: 0.8;
+.clouds::after{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:white;
+    border-radius:50%;
+    top:12px;
+    left:12px;
+    box-shadow:10px 5px 0 white, 20px 10px 0 white;
 }
 
 /* 🌌 ESTRELLAS */
-.stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
 }
 
-.stars::before {
-    content: "✦ ✦ ✦";
-    position: absolute;
-    color: white;
-    font-size: 10px;
-    top: 15px;
-    left: 20px;
-    letter-spacing: 10px;
+.stars::before{
+    content:"✦ ✦ ✦";
+    position:absolute;
+    color:white;
+    font-size:10px;
+    top:12px;
+    left:20px;
+    letter-spacing:8px;
 }
 
-/* activar estrellas en oscuro */
-body.dark .stars {
-    opacity: 1;
+/* activar en oscuro */
+body.dark .stars{
+    opacity:1;
 }
 
 /* ocultar nubes en oscuro */
-body.dark .clouds {
-    opacity: 0;
+body.dark .clouds{
+    opacity:0;
 }
 
-/* botón móvil */
-.knob {
-    width: 42px;
-    height: 42px;
+/* KNOB */
+.knob{
+    width:38px;
+    height:38px;
 
-    background: white;
-    border-radius: 50%;
+    background:white;
+    border-radius:50%;
 
-    position: absolute;
-    top: 4px;
-    left: 4px;
+    position:absolute;
+    top:3px;
+    left:3px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    transition: 0.4s;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition:0.4s;
 }
 
-/* mover a derecha en oscuro */
-body.dark .knob {
-    left: 74px;
-    background: #1e1e2f;
+/* mover a modo oscuro */
+body.dark .knob{
+    left:69px;
+    background:#1e1e2f;
 }
 
 /* icono */
-.icon {
-    font-size: 18px;
+.icon{
+    font-size:16px;
+}
+
+/* CONTENT */
+.content{
+    padding-top:90px;
+    padding-left:25px;
 }
