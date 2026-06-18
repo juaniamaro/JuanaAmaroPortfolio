@@ -159,3 +159,32 @@ body.dark .knob{
     padding-top:90px;
     padding-left:25px;
 }
+.lang-switch{
+    display:flex;
+    gap:8px;
+}
+
+.flag-btn{
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+
+    font-size:20px;
+
+    transition:0.3s;
+}
+
+.flag-btn:hover{
+    transform:scale(1.1);
+}
+
+body.light .flag-btn{
+    background:rgba(0,0,0,0.08);
+}
