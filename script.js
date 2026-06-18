@@ -1,18 +1,18 @@
-const themeBtn = document.getElementById("themeToggle");
+const switchBtn = document.getElementById("themeSwitch");
 const langBtn = document.getElementById("langToggle");
 
 const title = document.getElementById("title");
 const text = document.getElementById("text");
 
-/* 🌙 DARK MODE */
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
+/* 🌙☀️ THEME SWITCH */
+switchBtn.addEventListener("click", () => {
 
-    themeBtn.textContent =
-        document.body.classList.contains("light") ? "☀️" : "🌙";
+    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark");
+
 });
 
-/* 🌍 IDIOMA */
+/* 🌍 LANGUAGE */
 let lang = "es";
 
 langBtn.addEventListener("click", () => {
@@ -21,16 +21,16 @@ langBtn.addEventListener("click", () => {
 
         title.textContent = "Hello, I'm Juana";
         text.textContent = "Welcome to my portfolio";
+        langBtn.textContent = "ES";
 
-        langBtn.textContent = "EN";
         lang = "en";
 
     } else {
 
         title.textContent = "Hola, soy Juana";
         text.textContent = "Bienvenida a mi portfolio";
+        langBtn.textContent = "EN";
 
-        langBtn.textContent = "ES";
         lang = "es";
     }
 });
