@@ -1,0 +1,141 @@
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#050505;
+font-family:Consolas, monospace;
+overflow:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at center,
+#240036 0%,
+#0b0b0b 60%);
+}
+
+.laptop{
+perspective:1200px;
+}
+
+.screen{
+
+```
+width:700px;
+height:420px;
+
+background:#111;
+
+border:3px solid #d946ef;
+
+border-radius:12px 12px 0 0;
+
+transform-origin:bottom;
+
+animation:openLaptop 2s ease forwards;
+
+box-shadow:
+0 0 20px #d946ef,
+0 0 40px #9333ea;
+
+padding:40px;
+
+color:#fff;
+```
+
+}
+
+.keyboard{
+
+```
+width:760px;
+height:35px;
+
+background:#1a1a1a;
+
+border-radius:0 0 20px 20px;
+
+margin-left:-30px;
+
+box-shadow:
+0 0 15px #9333ea;
+```
+
+}
+
+@keyframes openLaptop{
+
+```
+from{
+    transform:rotateX(-95deg);
+}
+
+to{
+    transform:rotateX(0deg);
+}
+```
+
+}
+
+#boot-text{
+color:#d946ef;
+font-size:1rem;
+line-height:1.8;
+}
+
+#name{
+
+```
+margin-top:25px;
+
+color:white;
+
+font-size:3rem;
+
+text-shadow:
+0 0 15px #d946ef;
+
+display:none;
+```
+
+}
+
+#subtitle{
+
+```
+color:#c084fc;
+
+margin-top:15px;
+
+font-size:1.2rem;
+
+display:none;
+```
+
+}
+
+.cursor{
+
+```
+animation:blink .8s infinite;
+```
+
+}
+
+@keyframes blink{
+
+```
+50%{
+    opacity:0;
+}
+```
+
+}
