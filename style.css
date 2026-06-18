@@ -205,3 +205,53 @@ body.dark .knob{
 body.light .flag-btn{
     background:rgba(0,0,0,0.08);
 }
+
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+
+    gap:6px;
+    margin-top:10px;
+}
+
+/* links */
+.menu a{
+    text-decoration:none;
+    color:inherit;
+
+    font-size:14px;
+    opacity:0.75;
+
+    transition:0.3s;
+}
+
+.menu a:hover{
+    opacity:1;
+    transform:translateX(-4px);
+}
+
+/* ⭐ estrellas separadoras */
+.star{
+    font-size:10px;
+    color:#c084fc;
+
+    opacity:0.7;
+
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+/* brillo animado */
+@keyframes twinkle{
+    0%,100%{
+        opacity:0.3;
+        transform:scale(1);
+        text-shadow:0 0 5px #a855f7;
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+        text-shadow:0 0 12px #c084fc;
+    }
+}
