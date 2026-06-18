@@ -1,3 +1,6 @@
+const switchBtn = document.getElementById("themeSwitch");
+const icon = document.querySelector(".icon");
+
 const esBtn = document.getElementById("esBtn");
 const enBtn = document.getElementById("enBtn");
 
@@ -6,18 +9,58 @@ const text = document.getElementById("text");
 
 let lang = "es";
 
-esBtn.addEventListener("click", () => {
+/* =========================
+   🌙☀️ THEME SYSTEM
+========================= */
 
-    lang = "es";
+function updateThemeIcon() {
+    const isLight = document.body.classList.contains("light");
+    icon.textContent = isLight ? "☀️" : "🌙";
+}
 
-    title.textContent = "Hola, soy Juana";
-    text.textContent = "Bienvenida a mi portfolio";
+switchBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark");
+
+    updateThemeIcon();
 });
 
-enBtn.addEventListener("click", () => {
+/* =========================
+   🌍 LANGUAGE SYSTEM
+========================= */
 
-    lang = "en";
+function setLanguage(newLang) {
 
-    title.textContent = "Hello, I'm Juana";
-    text.textContent = "Welcome to my portfolio";
-});
+    lang = newLang;
+
+    if (lang === "es") {
+
+        title.textContent = "Hola, soy Juana";
+        text.textContent = "Bienvenida a mi portfolio";
+
+        esBtn.classList.add("active");
+        enBtn.classList.remove("active");
+
+    } else {
+
+        title.textContent = "Hello, I'm Juana";
+        text.textContent = "Welcome to my portfolio";
+
+        enBtn.classList.add("active");
+        esBtn.classList.remove("active");
+    }
+}
+
+/* clicks banderas */
+esBtn.addEventListener("click", () => setLanguage("es"));
+enBtn.addEventListener("click", () => setLanguage("en"));
+
+/* =========================
+   🚀 INIT (IMPORTANTE)
+========================= */
+
+// estado inicial
+document.body.classList.add("dark");
+updateThemeIcon();
+setLanguage(lang);
