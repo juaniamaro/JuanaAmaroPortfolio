@@ -1,107 +1,118 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#050505;
-    font-family:Consolas, monospace;
-    overflow:hidden;
+body {
+    background: #05010a;
+    font-family: Consolas, monospace;
+    overflow: hidden;
 }
 
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-    radial-gradient(circle at center,
-    #240036 0%,
-    #0b0b0b 60%);
+/* 🌌 ESTRELLAS */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
 }
 
-.laptop{
-    perspective:1200px;
+.stars::before,
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, #c084fc 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.15;
+    animation: moveStars 60s linear infinite;
 }
 
-.screen{
+.stars::after {
+    opacity: 0.08;
+    animation-duration: 120s;
+}
 
-    width:700px;
-    height:420px;
+@keyframes moveStars {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-500px, -500px);
+    }
+}
 
-    background:#111;
+/* 🌌 HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    border:3px solid #d946ef;
+/* 💻 PORTÁTIL */
+.laptop {
+    perspective: 1200px;
+}
 
-    border-radius:12px 12px 0 0;
+.screen {
+    width: 750px;
+    height: 420px;
 
-    transform-origin:bottom;
+    background: rgba(10,10,10,0.95);
+    border: 2px solid #c084fc;
 
-    animation:openLaptop 2s ease forwards;
+    border-radius: 12px 12px 0 0;
+
+    padding: 40px;
+
+    transform-origin: bottom;
+    animation: open 1.8s ease forwards;
 
     box-shadow:
-    0 0 20px #d946ef,
-    0 0 40px #9333ea;
-
-    padding:40px;
-
-    color:#fff;
+        0 0 25px #c084fc,
+        0 0 60px #a855f7;
 }
 
-.keyboard{
-
-    width:760px;
-    height:35px;
-
-    background:#1a1a1a;
-
-    border-radius:0 0 20px 20px;
-
-    margin-left:-30px;
-
-    box-shadow:
-    0 0 15px #9333ea;
+/* teclado */
+.keyboard {
+    width: 780px;
+    height: 40px;
+    background: #111;
+    border-radius: 0 0 18px 18px;
+    margin-left: -15px;
+    box-shadow: 0 0 20px #7c3aed;
 }
 
-@keyframes openLaptop{
-
-    from{
-        transform:rotateX(-95deg);
+/* ✨ ANIMACIÓN PORTÁTIL */
+@keyframes open {
+    from {
+        transform: rotateX(-90deg);
+        opacity: 0;
     }
-
-    to{
-        transform:rotateX(0deg);
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
     }
 }
 
-#boot-text{
-    color:#d946ef;
-    font-size:1rem;
-    line-height:1.8;
+/* TEXTO */
+.name {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px #c084fc;
+    margin-bottom: 10px;
 }
 
-#name{
-    margin-top:25px;
-    color:white;
-    font-size:3rem;
-    text-shadow:0 0 15px #d946ef;
-    display:none;
+.role {
+    color: #c084fc;
+    margin-bottom: 30px;
 }
 
-#subtitle{
-    color:#c084fc;
-    margin-top:15px;
-    font-size:1.2rem;
-    display:none;
-}
-
-.cursor{
-    animation:blink .8s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:0;
-    }
+.info p {
+    color: #ddd;
+    margin: 8px 0;
 }
