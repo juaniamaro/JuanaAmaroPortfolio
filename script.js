@@ -30,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const menu = {
             es: {
-                title: "Hola, soy Juana",
-                text: "Bienvenida a mi portfolio",
-
                 home: "Inicio",
                 about: "Sobre mí",
                 projects: "Proyectos",
@@ -40,13 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 contact: "Contacto"
             },
             en: {
-                title: "Hello, I'm Juana",
-                text: "Welcome to my portfolio",
-
                 home: "Home",
                 about: "About me",
                 projects: "Projects",
-                blog: "Blog",
+                blog: "Divulgation",
                 contact: "Contact"
             }
         };
