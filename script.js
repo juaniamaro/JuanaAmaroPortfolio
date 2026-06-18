@@ -29,12 +29,9 @@ switchBtn.addEventListener("click", () => {
 /* =========================
    🌍 LANGUAGE SYSTEM
 ========================= */
+function setLanguage(lang){
 
-function setLanguage(newLang) {
-
-    lang = newLang;
-
-    if (lang === "es") {
+    if(lang === "es"){
 
         title.textContent = "Hola, soy Juana";
         text.textContent = "Bienvenida a mi portfolio";
@@ -42,7 +39,7 @@ function setLanguage(newLang) {
         esBtn.classList.add("active");
         enBtn.classList.remove("active");
 
-    } else {
+    }else{
 
         title.textContent = "Hello, I'm Juana";
         text.textContent = "Welcome to my portfolio";
@@ -52,15 +49,8 @@ function setLanguage(newLang) {
     }
 }
 
-/* clicks banderas */
 esBtn.addEventListener("click", () => setLanguage("es"));
 enBtn.addEventListener("click", () => setLanguage("en"));
 
-/* =========================
-   🚀 INIT (IMPORTANTE)
-========================= */
-
-// estado inicial
-document.body.classList.add("dark");
-updateThemeIcon();
-setLanguage(lang);
+// init
+setLanguage("es");
