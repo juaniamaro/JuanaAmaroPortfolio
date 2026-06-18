@@ -1,107 +1,78 @@
-body {
+* {
     margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle, #0a0a1a, #000);
-    overflow: hidden;
-    font-family: sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* 🌌 contenedor */
-.space {
-    position: relative;
-    width: 100%;
-    height: 100%;
+/* 🌙 TEMA OSCURO (default) */
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
 }
 
-/* 🪐 órbita */
-.orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    transform: translate(-50%, -50%);
-    animation: rotate 20s linear infinite;
+/* ☀️ TEMA CLARO */
+body.light {
+    background: #f5f5f5;
+    color: #111;
 }
 
-/* planeta */
-.planet {
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-}
-
-/* planetas */
-.p1 {
-    width: 40px;
-    height: 40px;
-    background: #a855f7;
+/* HEADER FIJO */
+.header {
+    position: fixed;
     top: 0;
-    left: 50%;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    z-index: 999;
 }
 
-.p2 {
-    width: 25px;
-    height: 25px;
-    background: #60a5fa;
-    bottom: 0;
-    left: 20%;
+/* header en modo claro */
+body.light .header {
+    background: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-@keyframes rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+/* logo */
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* ✍️ TEXTO */
-#name {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: transparent;
-    font-size: 3rem;
-    letter-spacing: 2px;
+/* botones */
+.right button {
+    margin-left: 10px;
+    padding: 8px 12px;
 
-    background: linear-gradient(90deg, white 0%, white 50%, transparent 50%);
-    background-size: 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
+    border: none;
+    border-radius: 8px;
 
-    animation: reveal 4s ease forwards;
+    cursor: pointer;
+
+    background: #222;
+    color: white;
+
+    transition: 0.3s;
 }
 
-/* 🌠 estrella fugaz */
-.shooting-star {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: white;
-    top: -10%;
-    left: -10%;
-    box-shadow:
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px white;
-
-    animation: shoot 3s linear forwards;
+body.light .right button {
+    background: #ddd;
+    color: #111;
 }
 
-@keyframes shoot {
-    0% {
-        transform: translate(0,0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(120vw, 120vh);
-        opacity: 0;
-    }
-}
-
-/* revelado del texto */
-@keyframes reveal {
-    to {
-        background-position: 0%;
-        color: white;
-    }
+/* contenido */
+.content {
+    padding-top: 80px;
+    padding-left: 30px;
 }
