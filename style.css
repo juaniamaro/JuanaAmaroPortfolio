@@ -176,15 +176,32 @@ body.dark .knob{
     background:rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
 
-    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
     transition:0.3s;
 }
 
+.flag-btn svg{
+    width:24px;
+    height:24px;
+
+    border-radius:4px;
+}
+
+/* hover */
 .flag-btn:hover{
     transform:scale(1.1);
 }
 
+/* activo */
+.flag-btn.active{
+    outline:2px solid #a855f7;
+    transform:scale(1.1);
+}
+
+/* modo claro */
 body.light .flag-btn{
     background:rgba(0,0,0,0.08);
 }
