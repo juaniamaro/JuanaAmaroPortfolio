@@ -29,28 +29,27 @@ switchBtn.addEventListener("click", () => {
 /* =========================
    🌍 LANGUAGE SYSTEM
 ========================= */
-function setLanguage(lang){
+document.addEventListener("DOMContentLoaded", () => {
 
-    if(lang === "es"){
+    const esBtn = document.getElementById("esBtn");
+    const enBtn = document.getElementById("enBtn");
 
-        title.textContent = "Hola, soy Juana";
-        text.textContent = "Bienvenida a mi portfolio";
+    const title = document.getElementById("title");
+    const text = document.getElementById("text");
 
-        esBtn.classList.add("active");
-        enBtn.classList.remove("active");
+    function setLanguage(lang){
 
-    }else{
-
-        title.textContent = "Hello, I'm Juana";
-        text.textContent = "Welcome to my portfolio";
-
-        enBtn.classList.add("active");
-        esBtn.classList.remove("active");
+        if(lang === "es"){
+            title.textContent = "Hola, soy Juana";
+            text.textContent = "Bienvenida a mi portfolio";
+        } else {
+            title.textContent = "Hello, I'm Juana";
+            text.textContent = "Welcome to my portfolio";
+        }
     }
-}
 
-esBtn.addEventListener("click", () => setLanguage("es"));
-enBtn.addEventListener("click", () => setLanguage("en"));
+    esBtn.addEventListener("click", () => setLanguage("es"));
+    enBtn.addEventListener("click", () => setLanguage("en"));
 
-// init
-setLanguage("es");
+    setLanguage("es");
+});
